@@ -10,7 +10,7 @@ type User = {
     address: Address
 }
 
-type UserProperties = keyof User     // retorna todas as chaves que um objeto contem
+type UserProperties = keyof User    
 
 function pickProperty(user: User, property: UserProperties) {
     return user[property]
@@ -45,3 +45,26 @@ type UserNameAndAge = Pick<User, 'name' | 'age'>
 
 type UserPartial = Partial<User>
 
+// ------------------------------------------------------------------
+
+type DbConfig = {
+    name: string
+    url: string
+    timeout?: number
+}
+
+// forca uma tipagem
+const conn1 = { name: 'postgres', url: 'postgres://user:password'} as DbConfig
+
+
+const conn2 : DbConfig = { name: 'postgres', url: 'postgres://user:password'}
+
+
+const conn3 = { name: 'postgres', url: 'postgres://user:password', timeout: 5000} satisfies DbConfig
+
+const timeout = conn3.timeout
+
+
+// function pickProperty<objType>(obj: objType, property: keyof objType) {
+//     return obj[property]
+// }

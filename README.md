@@ -1,12 +1,14 @@
 # basic-TypeScript
 Just learning basic concepts of TypeScript
 
-npm init -y // para inicializar o projeto
+npm init -y  # Initialize the project
 
-npm typescript i -D // para instalar ts como uma dependencia de desenvolvimento
+npm install typescript --save-dev  # Install TypeScript as a development dependency
 
-npx tsc --init  // cria um arquivo de configuracao do ts o tsconfig.json
--> alterar target !! es2022 para node 22
+npx tsc --init  # Create a TypeScript configuration file, tsconfig.json
 
- npm i tsx -D // para executar o codigo ts 
- npx tsx nomedoarquivo para executar
+# -> Change target to es2022 for Node 22
+
+npm install tsx --save-dev  # Install tsx for executing TypeScript code
+
+npx tsx filename  # Execute the TypeScript code
